@@ -27,9 +27,9 @@ namespace WebApplication4.Controllers
             // ####################### DÜZENLEMESİ ZORUNLU ALANLAR #######################
             //
             // API Entegr     asyon Bilgileri - Mağaza paneline giriş yaparak BİLGİ sayfasından alabilirsiniz.
-            string merchant_id = "314546";
-            string merchant_key = "oBPWn6gffNwR11R2";
-            string merchant_salt = "rNd5M6bQ71ZZ4j6d";
+            string merchant_id = "xxx";
+            string merchant_key = "xxx";
+            string merchant_salt = "xxxx";
             //
             // Müşterinizin sitenizde kayıtlı veya form vasıtasıyla aldığınız eposta adresi
             string emailstr = mail;
@@ -175,8 +175,8 @@ namespace WebApplication4.Controllers
         [System.Web.Mvc.HttpPost]
         public ActionResult Bildirim(object a)
         {
-            string merchant_key = "oBPWn6gffNwR11R2";
-            string merchant_salt = "rNd5M6bQ71ZZ4j6d";
+            string merchant_key = "xxxx";
+            string merchant_salt = "xxxx";
             string merchant_oid = Request.Form["merchant_oid"];
             string status = Request.Form["status"];
             string total_amount = Request.Form["total_amount"];
@@ -220,15 +220,15 @@ namespace WebApplication4.Controllers
                 // değişebilir. Güncel tutarı Request.Form['total_amount'] değerinden alarak muhasebe işlemlerinizde kullanabilirsiniz.
 
                 MailMessage mail = new MailMessage();
-                mail.To.Add("salih.yildiz@dilekhali.com");
-                mail.From = new MailAddress("salih.yildiz@dilekhali.com");
+                mail.To.Add("yldzsalih27@gmail.com");
+                mail.From = new MailAddress("xxxx");
                 mail.Subject = "Paytr Geliyor";
                 mail.Body = hash;
                 mail.IsBodyHtml = true;
 
 
                 SmtpClient smtp = new SmtpClient("smtp.office365.com", 587);
-                smtp.Credentials = new NetworkCredential("salih.yildiz@dilekhali.com", "Aa123456");
+                smtp.Credentials = new NetworkCredential("xxxx", "xxx");
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
 
