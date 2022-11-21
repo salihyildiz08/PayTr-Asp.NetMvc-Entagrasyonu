@@ -55,7 +55,7 @@ namespace WebApplication4.Controllers
             // !!! Bu sayfa siparişi onaylayacağınız sayfa değildir! Yalnızca müşterinizi bilgilendireceğiniz sayfadır!
             // !!! Siparişi onaylayacağız sayfa "Bildirim URL" sayfasıdır (Bakınız: 2.ADIM Klasörü).
             var domain = Request.Url.GetLeftPart(UriPartial.Authority);
-            string merchant_ok_url = "http://dilektest.online/home/bildirim";
+            string merchant_ok_url = "http://www.siteniz.com/home/bildirim";
             //
             // Ödeme sürecinde beklenmedik bir hata oluşması durumunda müşterinizin yönlendirileceği sayfa
             // !!! Bu sayfa siparişi iptal edeceğiniz sayfa değildir! Yalnızca müşterinizi bilgilendireceğiniz sayfadır!
@@ -69,8 +69,8 @@ namespace WebApplication4.Controllers
             string user_ip = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
             if (user_ip == "" || user_ip == null)
             {
-                // user_ip = Request.ServerVariables["REMOTE_ADDR"];
-                user_ip = "91.93.192.106";
+                 user_ip = Request.ServerVariables["REMOTE_ADDR"];
+               
             }
 
 
